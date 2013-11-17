@@ -4,7 +4,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title> Administrador </title>
+        <title> Login </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <%@include file="/public/header.jsp" %>
@@ -14,18 +14,14 @@
 
         <div class="container-fluid">
             <div class="row-fluid">
-                <div class="span9">
-                 
-                    <form name="login_form" action="/app/j_spring_security_check" method="post">
-                        <p><input type="text" class="span3" name="j_username" id="email" placeholder="Usuario"></p>
-                        <p><input type="password" class="span3" name="j_password" placeholder="Contraseña"></p>
-                        <p><button type="submit" class="btn btn-primary">Aceptar</button>
-                            <a href="#">Olvido Contraseña?</a>
-                        </p>
-                    </form>
-                </div>
+                <form class="form-signin" action="<%=contextPath%>/adm/security/j_spring_security_check" method="post">
+                    <h2 class="form-signin-heading">Ingresar</h2>
+                    <input type="text" class="input-block-level" placeholder="Email address" name="j_username">
+                    <input type="password" class="input-block-level" placeholder="Password"  name="j_password">
+                    
+                    <button class="btn btn-large btn-primary" type="submit">Ingresar</button>
+                </form>
             </div>
-            <hr>
         </div>
         <%@include file="/public/footer.jsp" %>
     </body>

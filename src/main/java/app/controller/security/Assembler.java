@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package app.controller.security;
 
 import app.model.Usuario;
@@ -19,11 +15,11 @@ import org.springframework.transaction.annotation.Transactional;
 public class Assembler {
 
     @Transactional(readOnly = true)
-    User buildUserSpringSecurity(Usuario usuario) {
+    public User buildUserSpringSecurity(Usuario usuario) {
 
         String username = usuario.getUsuario();
         String password = usuario.getPassword();
-        boolean enabled = (usuario.getEstado() == EstadoEnum.ACTIVO.getValue()) ? true : false;
+        boolean enabled = (usuario.getEstado()== EstadoEnum.ACTIVO.getValue()) ? true : false;
         boolean accountNonExpired = true;
         boolean credentialsNonExpired = true;
         boolean accountNonLocked = true;
@@ -33,12 +29,13 @@ public class Assembler {
             authorities.add(new SimpleGrantedAuthority(rol.getAuthority()));
         }
 
-        User user = new User(username,
-                password,
-                enabled,
-                accountNonExpired,
+        User user = new User(username, 
+                password, 
+                enabled, 
+                accountNonExpired, 
                 credentialsNonExpired,
-                accountNonLocked, authorities);
+                accountNonLocked,
+                authorities);
         return user;
     }
 }
