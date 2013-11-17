@@ -50,6 +50,7 @@ public class AdminServiceImp implements AdminService {
         UsuarioRol rol = new UsuarioRol();
         rol.setUsuario(user);
         rol.setAuthority(RolesEnum.ADMIN.getValue());
+        
         usuarioRolDAO.save(rol);
     }
 

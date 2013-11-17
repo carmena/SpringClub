@@ -18,8 +18,8 @@
                 <div class="span9">
                     <div class="row">
                         <a class="btn btn-primary pull-right" 
-                           href="<%=contextPath%>/adm/admin/new"> Nuevo </a>
-                        <h1> Administradores </h1>
+                           href="<%=contextPath%>/adm/socio/new"> Nuevo </a>
+                        <h1> Socios </h1>
                     </div>
 
                     <table class="table table-hover">
@@ -31,7 +31,7 @@
                             <th>Configuracion</th>
                             <th> </th>
                         </tr>
-                        <c:forEach var="adm" items="${admins}">
+                        <c:forEach var="adm" items="${socios}">
                             <tr>
                                 <td><c:out value="${adm.getFullName()}"/></td>
                                 <td><c:out value="${adm.email}"/></td>
@@ -45,11 +45,11 @@
                                         </a>
                                         <ul class="dropdown-menu pull-right">
                                             <li>
-                                                <a href="<%=contextPath%>/adm/admin/update/${adm.id}">
+                                                <a href="<%=contextPath%>/adm/socio/update/${adm.id}">
                                                     Editar</a>
                                             </li>
                                             <li>
-                                                <a href="<%=contextPath%>/adm/admin/delete/${adm.id}">
+                                                <a href="<%=contextPath%>/adm/sosio/delete/${adm.id}">
                                                     Eliminar</a>
                                             </li>
                                         </ul>
@@ -65,6 +65,3 @@
         <%@include file="/public/footer.jsp" %>
     </body>
 </html>
-
-
-

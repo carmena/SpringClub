@@ -4,7 +4,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title> Administradores </title>
+        <title> Persona </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <%@include file="/public/header.jsp" %>
@@ -18,26 +18,30 @@
                 <div class="span9">
                     <div class="row">
                         <a class="btn btn-primary pull-right" 
-                           href="<%=contextPath%>/adm/admin/new"> Nuevo </a>
-                        <h1> Administradores </h1>
+                           href="<%=contextPath%>/adm/persona/new"> Nuevo </a>
+                        <h1> Personas </h1>
                     </div>
 
                     <table class="table table-hover">
                         <tr>
-                            <th class="span3">Nombre</th>
+                            <th class="span3">Nombres</th>
+                            <th>Direccion</th>
                             <th>Email</th>
                             <th>Celular</th>
-                            <th>Dirección</th>
-                            <th>Configuracion</th>
+                            <th>Sexo</th>
                             <th> </th>
                         </tr>
-                        <c:forEach var="adm" items="${admins}">
+                        <c:forEach var="serv" items="${personas}">
                             <tr>
-                                <td><c:out value="${adm.getFullName()}"/></td>
-                                <td><c:out value="${adm.email}"/></td>
-                                <td><c:out value="${adm.celular}"/></td>
-                                <td><c:out value="${adm.direccion}"/></td>
-                                
+                                <td><c:out value="${serv.paterno}" /></td>
+                                <td><c:out value="${serv.direccion}"/></td>
+                                <td><c:out value="${serv.email}"/></td>
+                                <td><c:out value="${serv.celular}"/></td>
+                                <td><c:out value="${serv.sexo}"/></td>
+                                <td>
+                                  
+                                    
+                                </td>
                                 <td>
                                     <div class="btn-group">
                                         <a class="dropdown-toggle" data-toggle="dropdown" role="menu"  href="#">
@@ -45,11 +49,11 @@
                                         </a>
                                         <ul class="dropdown-menu pull-right">
                                             <li>
-                                                <a href="<%=contextPath%>/adm/admin/update/${adm.id}">
+                                                <a href="<%=contextPath%>/adm/persona/update/${serv.id}">
                                                     Editar</a>
                                             </li>
                                             <li>
-                                                <a href="<%=contextPath%>/adm/admin/delete/${adm.id}">
+                                                <a href="<%=contextPath%>/adm/persona/delete/${serv.id}">
                                                     Eliminar</a>
                                             </li>
                                         </ul>
@@ -65,6 +69,7 @@
         <%@include file="/public/footer.jsp" %>
     </body>
 </html>
+
 
 
 

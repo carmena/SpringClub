@@ -1,6 +1,6 @@
 package app.controller.adm.administrador;
 
-import app.model.Local;
+
 import app.model.Persona;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +16,7 @@ public class AdminController {
 
     @Autowired
     AdminService service;
-
+  
     @RequestMapping(method = RequestMethod.GET)
     public String index(Model model) {
 
@@ -27,10 +27,6 @@ public class AdminController {
 
     @RequestMapping("new")
     public String nuevo(Model model) {
-
-       
-        
-        
         model.addAttribute("admin", new Persona());
 
         return "adm/admin/adminForm";
